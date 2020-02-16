@@ -1,0 +1,57 @@
+{
+  "name": "atom-devreplay",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "Devreplay support for Atom-IDE",
+  "keywords": [
+    "atom-ide",
+    "lsp",
+    "linters",
+    "language-client"
+  ],
+  "activationHooks": [
+    "source.ts:root-scope-used",
+    "source.tsx:root-scope-used",
+    "source.js:root-scope-used",
+    "source.js.jsx:root-scope-used",
+    "source.python:root-scope-used"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ikuyadeu/atom-devreplay.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.21.0"
+  },
+  "dependencies": {
+    "atom-languageclient": "^0.9.9",
+    "devreplay-server": "^0.1.5"
+  },
+  "enhancedScopes": [
+    "source.js",
+    "source.js.jsx",
+    "text.html.vue",
+    "source.python",
+    "source.java",
+    "source.json",
+    "text.html.markdown"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    },
+    "intentions:list": {
+      "versions": {
+        "1.0.0": "provideIntentions"
+      }
+    },
+    "code-actions": {
+      "versions": {
+        "0.1.0": "provideCodeActions"
+      }
+    }
+  }
+}
